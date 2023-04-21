@@ -1,0 +1,26 @@
+<% if alert %>
+  <script>
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: '<%= alert %>',
+      html: 'Veuillez réessayer.',
+      showConfirmButton: false,
+      timer: 20500,
+      timerProgressBar: true
+    })
+  </script>
+<% end %>
+<% if notice %>
+  <script>
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Joueur trouvé',
+      html: 'Résultat : <strong><%= notice %></strong>',
+      showConfirmButton: false,
+      timer: 20500,
+      timerProgressBar: true
+    })
+  </script>
+<% end %>

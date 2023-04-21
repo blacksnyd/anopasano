@@ -1,0 +1,13 @@
+<div class="p-10 bg-slate-800 rounded-xl shadow-lg">
+  <h1 class="text-4xl font-bold text-indigo-50 tracking-wide text-center">Wolfiak</h1>
+  <div class="mt-7">
+    <%= render "form" %>
+    <% if session[:last_player] %>
+      <p class="mt-7 text-white">Votre dernière recherche : <strong data-tooltip-target="tooltip-default"><%= session[:last_player]["username"] %></strong></p>
+      <div id="tooltip-default" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+          UUID : <strong><%= session[:last_player]["uuid"] %></strong>
+          <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+    <% end %>
+  </div>
+</div>

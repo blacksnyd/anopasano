@@ -7,17 +7,17 @@ module ApplicationHelper
       separator: '-',
       description: "Découvre le réel pseudo d’un joueur Wolfy en anonyme grâce à son UUID !",
       keywords: 'anonyme, joueur, wolfy, partie, game, player, uuid',
-      canonical: "https://thewolfiak.herokuapp.com/",
+      canonical: "https://wolfiak.me/",
       noindex: !Rails.env.production?,
       icon: [
         { href: image_url('wolfiak-32x32.png'), rel: 'icon', sizes: '32x32', type: 'image/png' }
       ],
       og: {
-        site_name: 'thewolfiak.herokuapp.com',
+        site_name: 'wolfiak.me',
         title: 'Wolfiak',
         description: "Découvre le réel pseudo d’un joueur Wolfy en anonyme grâce à son UUID !",
         type: 'website',
-        url: "https://thewolfiak.herokuapp.com/",
+        url: "https://wolfiak.me/",
         image: image_url('wolfiak-banner.svg')
       }
     }

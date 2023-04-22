@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wolfiak</title>
-    <meta name="description" content="Découvre le réel pseudo d’un joueur Wolfy en anonyme grâce à son UUID">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thewolfiak.herokuapp.com/">
-    <meta property="og:title" content="Wolfiak">
-    <meta property="og:description" content="Découvre le réel pseudo d’un joueur Wolfy en anonyme grâce à son UUID">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= display_meta_tags(default_meta_tags) %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>

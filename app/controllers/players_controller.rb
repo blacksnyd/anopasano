@@ -16,7 +16,12 @@ class PlayersController < ApplicationController
       @player.save
       redirect_to root_path
       flash[:notice] = @player.username
-      session[:last_player] = @player
+      session[:search] = @player
+      if session[:counter]
+        session[:counter] += 1
+      else
+        session[:counter] = 1
+      end
     else
       redirect_to root_path, alert: "UUID invalide"
     end

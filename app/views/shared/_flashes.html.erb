@@ -1,5 +1,5 @@
 <% if alert %>
-  <script>
+  <script data-turbo-temporary>
     Swal.fire({
       position: 'top-end',
       icon: 'error',
@@ -12,7 +12,7 @@
   </script>
 <% end %>
 <% if notice %>
-  <script>
+  <script data-turbo-temporary>
     Swal.fire({
       position: 'top-end',
       icon: 'success',

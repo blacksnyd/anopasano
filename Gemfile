@@ -12,6 +12,7 @@ gem 'simple_form-tailwind'
 gem 'meta-tags'
 gem "chartkick"
 gem "groupdate"
+gem "sitemap_generator"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

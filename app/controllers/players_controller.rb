@@ -16,7 +16,7 @@ class PlayersController < ApplicationController
     if uuid.present? && uuid.delete("-").length > 20
       @player.save
       redirect_to root_path
-      flash[:notice] = @player.username
+      flash[:notice] = "Résultat : #{@player.username}"
       session[:search] = @player
       if session[:counter]
         session[:counter] += 1

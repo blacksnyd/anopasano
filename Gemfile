@@ -10,6 +10,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem 'simple_form'
 gem 'simple_form-tailwind'
 gem 'meta-tags'
+gem "chartkick"
+gem "groupdate"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

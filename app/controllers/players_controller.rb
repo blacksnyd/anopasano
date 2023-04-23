@@ -12,7 +12,8 @@ class PlayersController < ApplicationController
   def create
     my_hash = player_params.merge(wolfyApi(player_params[:uuid]))
     @player = Player.new(my_hash)
-    if wolfyApi(player_params[:uuid]).present?
+    uuid = my_hash[:uuid]
+    if uuid.present? && uuid.delete("-").length > 20
       @player.save
       redirect_to root_path
       flash[:notice] = @player.username

@@ -24,7 +24,8 @@ class PlayersController < ApplicationController
         session[:counter] = 1
       end
     else
-      redirect_to root_path, alert: "UUID invalide"
+      redirect_to root_path
+      flash[:alert] = "UUID invalide... Vérifiez qu'il n'y ait pas un caractère en trop ou qu'il n'en manque pas un."
     end
   end
 

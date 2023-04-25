@@ -1,6 +1,14 @@
 <% if session[:search] %>
   <p class="mt-7 text-white">Nombre de recherches : <strong><%= session[:counter] %></strong></p>
-  <p class="text-white">Votre dernière recherche : <strong data-tooltip-target="tooltip-default" class="cursor-pointer"><%= session[:search]["username"] %></strong></p>
+  <div class="flex text-white">
+    <p>Votre dernière recherche :</p>
+    <%= link_to "https://wolfy.net/leaderboard/#{session[:search]["username"]}", class: "ml-1 font-bold flex hover:underline", target: "_blank", data: {tooltip_target: "tooltip-default"} do %>
+      <%= session[:search]["username"] %>
+      <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path>
+      </svg>
+    <% end %>
+  </div>
   <div id="tooltip-default" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
     UUID : <strong><%= session[:search]["uuid"] %></strong>
     <div class="tooltip-arrow" data-popper-arrow></div>

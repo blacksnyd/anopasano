@@ -27,7 +27,7 @@
             </div>
             <!-- Modal body -->
             <div class="p-6 space-y-6">
-              <%= line_chart Player.where("uuid = ?", session[:search]["uuid"]).group_by_day(:created_at).count %>
+              <%= line_chart Player.where("uuid = ?", session[:search]["uuid"]).group_by_day(:created_at).count, download: true  %>
 
             </div>
             <!-- Modal footer -->

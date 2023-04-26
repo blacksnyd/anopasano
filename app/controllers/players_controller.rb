@@ -14,18 +14,19 @@ class PlayersController < ApplicationController
     @player = Player.new(my_hash)
     uuid = wolfyApi(player_params[:uuid])
     if uuid.present? && player_params[:uuid].to_s.length > 20
-      @player.save
-      redirect_to root_path
-      flash[:notice] = "Résultat : #{@player.username}"
-      session[:search] = @player
-      if session[:counter]
-        session[:counter] += 1
+      if @rank.to_i > 10
+        @player.save
+        redirect_to root_path
+        flash[:notice] = "Résultat : #{@player.username}"
+        session[:search] = @player
+        session[:counter] ? session[:counter] += 1 : nil
       else
-        session[:counter] = 1
+        redirect_to root_path
+        flash[:alert] = "Ce joueur n'est pas alpha."
       end
     else
       redirect_to root_path
-      flash[:alert] = "UUID invalide... Vérifiez qu'il n'y ait pas un caractère en trop ou qu'il n'en manque pas un."
+      flash[:alert] = "UUID invalide... Vérifie les caractères"
     end
   end
 
@@ -44,6 +45,7 @@ class PlayersController < ApplicationController
     response = https.request(request)
     if response.code == "200"
       parse = JSON.parse(response.read_body)
+      @rank = parse["user"]["rank"]
       {
         username: parse["user"]["username"]
       }

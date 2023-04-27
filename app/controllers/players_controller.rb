@@ -19,7 +19,7 @@ class PlayersController < ApplicationController
         redirect_to root_path
         flash[:notice] = "Résultat : #{@player.username}"
         session[:search] = @player
-        session[:counter] ? session[:counter] += 1 : nil
+        session[:counter] ? session[:counter] += 1 : session[:counter] = 1
       else
         redirect_to root_path
         flash[:alert] = "Ce joueur n'est pas alpha."

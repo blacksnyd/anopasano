@@ -22,7 +22,7 @@ class PlayersController < ApplicationController
         session[:counter] ? session[:counter] += 1 : session[:counter] = 1
       else
         redirect_to root_path
-        flash[:alert] = "Ce joueur n'est pas alpha."
+        flash[:alert] = "Ce joueur n'a pas de grade."
       end
     else
       redirect_to root_path

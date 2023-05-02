@@ -18,7 +18,7 @@ module ApplicationHelper
         description: "Découvre le réel pseudo d’un joueur Wolfy en anonyme grâce à son UUID !",
         type: 'website',
         url: "https://wolfiak.me/",
-        image: image_url('wolfiak-banner.svg')
+        image: image_url('wolfiak-banner.png')
       }
     }
   end

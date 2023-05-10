@@ -37,7 +37,7 @@ class PlayersController < ApplicationController
   end
 
   def wolfyApi(uuid)
-    url = URI("https://wolfy.net/api/leaderboard/player/#{CGI.escape(uuid)}")
+    url = URI("https://wolfy.net/api/leaderboard/player/#{CGI.escape(uuid.strip)}")
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true
     request = Net::HTTP::Get.new(url)

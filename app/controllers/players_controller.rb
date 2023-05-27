@@ -18,7 +18,8 @@ class PlayersController < ApplicationController
         @player.save
         redirect_to root_path
         flash[:notice] = "Résultat : #{@player.username}"
-        session[:search] = @player
+        session[:history] ||= []
+        session[:history] << @player
         session[:counter] ? session[:counter] += 1 : session[:counter] = 1
       else
         redirect_to root_path

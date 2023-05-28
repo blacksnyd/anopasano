@@ -5,3 +5,7 @@
 .turbo-progress-bar {
   @apply bg-amber-400;
 }
+
+.bg-alpha {
+  background: linear-gradient(0deg,#ce9ffc,rgba(94,83,213,0));
+}

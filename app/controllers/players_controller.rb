@@ -27,7 +27,7 @@ class PlayersController < ApplicationController
       end
     else
       redirect_to root_path
-      flash[:alert] = "L'UUID <strong>#{player_params[:uuid]}</strong> n'existe pas ou n'est pas valide."
+      flash[:alert] = "L'UUID saisi n'existe pas ou n'est pas valide."
     end
   end
 

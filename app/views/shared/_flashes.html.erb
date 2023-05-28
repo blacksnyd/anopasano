@@ -3,9 +3,10 @@
     <svg class="mr-2 w-5 h-5 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
     </svg>
-    <p><%= alert %></p>
+    <p><%= alert.html_safe %></p>
   </div>
 <% end %>
+
 <% if notice %>
   <div class="mb-5 flex text-white bg-green-500 p-2 px-5 rounded-xl" role="alert" data-turbo-temporary>
     <svg class="mr-2 w-5 h-5 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">

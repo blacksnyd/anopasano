@@ -17,7 +17,7 @@ class PlayersController < ApplicationController
       if @rank.to_i > 10
         @player.save
         redirect_to root_path
-        flash[:notice] = "L'UUID <strong>#{@player.uuid}</strong> appartient à : <strong>#{@player.username}</strong>"
+        flash[:notice] = "L'UUID <strong>#{@player.uuid}</strong> appartient à <strong>#{@player.username}</strong>"
         session[:history] ||= []
         session[:history] << @player
         session[:counter] ? session[:counter] += 1 : session[:counter] = 1
@@ -27,7 +27,7 @@ class PlayersController < ApplicationController
       end
     else
       redirect_to root_path
-      flash[:alert] = "UUID invalide... Vérifie les caractères"
+      flash[:alert] = "L'UUID <strong>#{player_params[:uuid]}</strong> n'existe pas ou n'est pas valide."
     end
   end
 

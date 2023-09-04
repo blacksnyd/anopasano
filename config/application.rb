@@ -11,5 +11,6 @@ module Anopasano
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.exceptions_app = self.routes # Add this line
+    config.session_store :active_record_store
   end
 end

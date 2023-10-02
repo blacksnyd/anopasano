@@ -1,5 +1,5 @@
 <% if session[:history] %>
-  <p class="mt-3 text-white">Nombre de recherches : <strong><%= session[:counter] %></strong></p>
+  <p class="mt-3 text-white">Nombre de recherches : <strong><%= session[:history].count %></strong></p>
   <div class="flex text-white">
     <p>Votre dernière recherche :</p>
     <%= link_to "https://wolfy.net/leaderboard/#{session[:history].last["username"]}", class: "ml-1 font-bold flex hover:underline", target: "_blank", data: {tooltip_target: "tooltip-default"} do %>

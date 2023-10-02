@@ -20,7 +20,6 @@ class PlayersController < ApplicationController
         flash[:notice] = "L'UUID <strong>#{@player.uuid}</strong> appartient à <strong>#{@player.username}</strong>"
         session[:history] ||= []
         session[:history] << @player
-        session[:counter] ? session[:counter] += 1 : session[:counter] = 1
       else
         redirect_to root_path
         flash[:alert] = "Ce joueur n'a pas de grade."
